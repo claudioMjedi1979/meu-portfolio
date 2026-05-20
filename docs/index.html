@@ -1,290 +1,515 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Your description">
-    <meta name="author" content="Your name">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Your description">
-    <meta name="author" content="Your name">
-
-    <!-- Webpage Title -->
-    <title>Claudio Marcelino - Portfólio</title>
-
-    <!-- Styles -->
+    <meta name="description" content="Claudio Marcelino — Senior Data Engineer | Databricks · Airflow · AWS · Azure | DataOps & MLOps | Brazil (Remote)">
+    <meta name="author" content="Claudio Marcelino">
+    <meta name="keywords" content="Data Engineer, Databricks, Apache Airflow, AWS, Azure, PySpark, Delta Lake, MLOps, DataOps, Terraform">
+    <title>Claudio Marcelino — Senior Data Engineer</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* ── Language toggle ── */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            padding: 0.25rem 0.6rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.8rem;
+            color: white;
+            font-weight: 600;
+        }
+        .lang-toggle:hover { background: rgba(255,255,255,0.2); }
+        .lang-toggle .flag { font-size: 1rem; }
+
+        /* ── Badges ── */
+        .badge-new  { display:inline-block;background:#28a745;color:white;font-size:.68rem;font-weight:700;padding:.15rem .55rem;border-radius:20px;margin-left:.4rem;vertical-align:middle; }
+        .badge-ai   { display:inline-block;background:#6f42c1;color:white;font-size:.68rem;font-weight:700;padding:.15rem .55rem;border-radius:20px;margin-left:.4rem;vertical-align:middle; }
+        .badge-live { display:inline-block;background:#17a2b8;color:white;font-size:.68rem;font-weight:700;padding:.15rem .55rem;border-radius:20px;margin-left:.4rem;vertical-align:middle; }
+
+        /* ── Project tags ── */
+        .project-tags { margin:.6rem 0 .8rem;display:flex;flex-wrap:wrap;gap:.3rem; }
+        .project-tag  { font-size:.7rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#ccc;padding:.1rem .5rem;border-radius:4px;font-family:monospace; }
+
+        /* ── Stats strip ── */
+        .stats-strip { background:#1a1a2e;padding:2rem 0;border-top:2px solid rgba(88,166,255,.2);border-bottom:2px solid rgba(88,166,255,.2); }
+        .stat-item   { text-align:center; }
+        .stat-num    { font-size:2rem;font-weight:700;color:#58a6ff;display:block; }
+        .stat-lbl    { font-size:.75rem;color:#8b949e;font-family:monospace; }
+
+        /* ── Section label ── */
+        .section-label { font-family:monospace;font-size:.78rem;color:#58a6ff;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem; }
+        .section-label::before { content:'// '; }
+
+        /* ── Cert cards ── */
+        .cert-card  { background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.8rem 1rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.8rem; }
+        .cert-icon  { font-size:1.3rem;flex-shrink:0; }
+        .cert-name  { font-size:.85rem;font-weight:600;color:#e6edf3; }
+        .cert-issuer{ font-size:.72rem;color:#8b949e;font-family:monospace; }
+    </style>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-        <div class="container">
-            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#servicos">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#projetos">Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#contact">Contato</a>
-                    </li>
-                </ul>
-            </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#header" style="font-family:monospace;font-size:.9rem;color:#58a6ff">
+            claudio<span style="color:#8b949e">.</span>dev
+        </a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item"><a class="nav-link page-scroll" href="#header" data-pt="Início" data-en="Home">Início</a></li>
+                <li class="nav-item"><a class="nav-link page-scroll" href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link page-scroll" href="#servicos" data-pt="Serviços" data-en="Services">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link page-scroll" href="#skills" data-pt="Skills" data-en="Skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link page-scroll" href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link page-scroll" href="#contact" data-pt="Contato" data-en="Contact">Contato</a></li>
+                <li class="nav-item ml-3">
+                    <button class="lang-toggle" id="langBtn" onclick="toggleLang()">
+                        <span class="flag" id="langFlag">🇺🇸</span>
+                        <span id="langLabel">EN</span>
+                    </button>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h1 class="h1-large">Olá, Seja bem-vindo!</h1>
-                        <h2 class="h1-large">"Nem tudo que pode ser contado conta, e nem tudo que conta pode ser contado." - Albert Einstein</h2>
-                        <a class="btn-solid-lg page-scroll" href="#sobre">Discover</a>
-                        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contate me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Sobre -->
-    <div id="sobre" class="basic-1 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container first">
-                        <h2>Olá, sou Claudio Marcelino</h2>
-                        <p>Engenheiro de Dados com 17 anos de experiência em Arquitetura de Dados, Data Lakes e integração de sistemas. Especialista em projetos de Big Data e Cloud, com proficiência em AWS, Azure e Databricks...</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-container second">
-                        <div class="time">2024 - PRESENTE</div>
-                        <h6>Desenvolvimento de aplicações em Engenharia de Software e Dados</h6>
-                        <p>Arquitetura de dados orientado a microsserviços e Plataforma de Dados.</p>
-                        <div class="time">2018 - 2019</div>
-                        <h6>Engenharia e Arquitetura de Dados</h6>
-                        <p>Projetos de Big Data e Cloud, com proficiência em AWS, Azure e Databricks.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-container third">
-                        <div class="time">2016 - 2017 - 2018</div>
-                        <h6>Senior BI ETL</h6>
-                        <p>Modelagem de Dados Conceituais, Lógicos e Físicos. Processos de ETL e manutenção de DW.</p>
-                    </div>
+<!-- Header -->
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="text-container">
+                    <h1 class="h1-large" data-pt="Olá, sou Claudio Marcelino!" data-en="Hi, I'm Claudio Marcelino!">Olá, sou Claudio Marcelino!</h1>
+                    <p style="font-size:1.1rem;color:#ccc;margin-bottom:.5rem">
+                        <strong style="color:#58a6ff">Senior Data Engineer</strong> · DataOps & MLOps · AI Engineer
+                    </p>
+                    <p style="font-size:.9rem;color:#8b949e;font-family:monospace;margin-bottom:1.5rem"
+                       data-pt="15+ anos · Itaú · Santander · Bradesco · Ambev · PicPay · Brasil 🇧🇷 (Remoto)"
+                       data-en="15+ years · Itaú · Santander · Bradesco · Ambev · PicPay · Brazil 🇧🇷 (Remote)">
+                        15+ anos · Itaú · Santander · Bradesco · Ambev · PicPay · Brasil 🇧🇷 (Remoto)
+                    </p>
+                    <a class="btn-solid-lg page-scroll" href="#projetos" data-pt="▸ Ver Projetos" data-en="▸ View Projects">▸ Ver Projetos</a>
+                    <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i> <span data-pt="Contato" data-en="Contact">Contato</span></a>
                 </div>
             </div>
         </div>
     </div>
+</header>
 
-    <!-- Services -->
-    <div id="servicos" class="basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Serviços Oferecidos</h2>
-                    <p class="p-heading">O Desenvolvimento de pipelines e arquitetura de dados vem sendo o carro-chefe nos últimos 5 anos. Durante esse tempo, venho ajudando startups e empresas com os seguintes serviços.</p>
-                </div>
+<!-- Stats Strip -->
+<div class="stats-strip">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-6 col-md-2 stat-item mb-3 mb-md-0">
+                <span class="stat-num">15+</span>
+                <span class="stat-lbl" data-pt="Anos Exp." data-en="Years Exp.">Anos Exp.</span>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="far fa-gem"></i>
-                        <h4>Design de Arquitetura de Dados</h4>
-                        <p>Experiência no design de arquitetura de dados, utilizando camadas Bronze, Silver e Gold para otimizar o fluxo de dados.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="fas fa-code"></i>
-                        <h4>Desenvolvimento de Dados</h4>
-                        <p>Desenvolvimento de soluções de ingestão, processamento e transformação de dados em arquiteturas escaláveis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="fas fa-tv"></i>
-                        <h4>Governança de Dados</h4>
-                        <p>Implementação de políticas de Governança de Dados, garantindo qualidade e segurança da informação.</p>
-                    </div>
-                </div>
+            <div class="col-6 col-md-2 stat-item mb-3 mb-md-0">
+                <span class="stat-num">5</span>
+                <span class="stat-lbl" data-pt="Bancos Tier-1" data-en="Tier-1 Banks">Bancos Tier-1</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Skills Section -->
-    <section id="skills" class="pt-5 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Minhas Skills</h2>
-                    <p class="mb-5">Aqui estão algumas das habilidades técnicas que desenvolvi ao longo da minha carreira:</p>
-                </div>
+            <div class="col-6 col-md-2 stat-item mb-3 mb-md-0">
+                <span class="stat-num">9</span>
+                <span class="stat-lbl" data-pt="Stacks Terraform" data-en="Terraform Stacks">Stacks Terraform</span>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Python</h5>
-                        <p>Experiência em análise de dados, automação de tarefas e desenvolvimento de aplicações web com Flask e Streamlit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Node.js (Criação de APIs)</h5>
-                        <p>Desenvolvimento de APIs RESTful usando Node.js, integrando sistemas de forma eficiente.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Linux</h5>
-                        <p>Administração básica de sistemas Linux, incluindo shell scripting e automação de tarefas.</p>
-                    </div>
-                </div>
+            <div class="col-6 col-md-2 stat-item mb-3 mb-md-0">
+                <span class="stat-num">3</span>
+                <span class="stat-lbl" data-pt="Certs Databricks" data-en="Databricks Certs">Certs Databricks</span>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>AWS</h5>
-                        <p>Conhecimento em serviços como EC2, Lambda, S3, RDS, Redshift, Athena, Glue, e otimização de custos com instâncias Spot.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Databricks</h5>
-                        <p>Habilidade em ingestão e transformação de dados utilizando Apache Spark na plataforma Databricks.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Data Engineering</h5>
-                        <p>Criação de pipelines de dados, ETL, e modelagem de Data Warehouses com ferramentas como Spark, Glue e Airflow.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Java (Iniciante)</h5>
-                        <p>Conhecimento básico em Java, focado em programação orientada a objetos.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Docker</h5>
-                        <p>Uso de Docker para containerização de aplicações e ambientes de desenvolvimento.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="skill-card">
-                        <h5>Data Visualization (Tableau & QuickSight)</h5>
-                        <p>Criação de dashboards interativos com Tableau e Amazon QuickSight para visualização de dados.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projetos -->
-    <div id="projetos" class="ex-basic-1 pt-5 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Confira alguns dos meus projetos no GitHub:</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <h5>Plataforma de produtos de dados Inter</h5>
-                        <p>Insights para redução de custo de infraestrutura utilizando instâncias Spot da AWS. Desenvolvido com Streamlit e Python.</p>
-                        <a href="https://github.com/claudioMjedi1979/teste-inter-streamlit" class="btn-solid-lg">Ver no GitHub</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <h5>Análise de Sequências de DNA e RNA com Biopython USP</h5>
-                        <p>Este projeto utiliza o Databricks e a biblioteca Biopython para realizar análises avançadas de sequências de DNA e RNA, incluindo transcrição, tradução para proteínas, cálculo da massa molecular e visualizações gráficas. </p>
-                        <a href="https://github.com/claudioMjedi1979/dna-bio-python" class="btn-solid-lg">Ver no GitHub</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <h5>Projeto de Coleta e Análise de Dados da API Brasil(dados publicos)</h5>
-                        <p>Este projeto foi desenvolvido para realizar a ingestão e análise de dados de participantes do sistema PIX, utilizando a API Brasil API. O objetivo é coletar informações relevantes, transformá-las e gerar relatórios que ajudem na visualização dos dados.</p>
-                        <a href="https://github.com/claudioMjedi1979/brasil-api-pix" class="btn-solid-lg">Ver no GitHub</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <h5>Projeto de Ingestão de Dados Olist(plataforma de e-commerce)Camadas Bronze, Silver e Gold</h5>
-                        <p>Os dados utilizados neste projeto são provenientes do Olist, uma plataforma de e-commerce que conecta vendedores e compradores. O Olist fornece dados sobre vendas, clientes, produtos e logística, abrangendo diversas informações relacionadas ao segmento de comércio eletrônico.</p>
-                        <a href="https://github.com/claudioMjedi1979/ingestao-bronze-silver-gold" class="btn-solid-lg">Ver no GitHub</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="project-card">
-                        <h5>Projeto Framework sorteiro para negativados</h5>
-                        <p> O projeto contempla uma arquitetura simples utilizado Databricks para sortear CPFs propensos a obter descontos.</p>
-                        <a href="https://github.com/claudioMjedi1979/framework-negativados" class="btn-solid-lg">Ver no GitHub</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-    <div class="project-card">
-        <h5>Projeto de Criação de Biblioteca (LIB) de Geração de Chaves Surrogate</h5>
-        <p>Biblioteca em Python para gerar chaves surrogate mascarando IDs usando algoritmos de hashing para Databricks.</p>
-        <a href="https://github.com/claudioMjedi1979/surrogate-key-generator" class="btn-solid-lg" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-    </div>
-</div>
+            <div class="col-6 col-md-2 stat-item">
+                <span class="stat-num">5</span>
+                <span class="stat-lbl" data-pt="Projetos Abertos" data-en="Open Projects">Projetos Abertos</span>
             </div>
         </div>
     </div>
 </div>
 
-    <!-- Contact -->
-    <div id="contact" class="form-1 bg-gray">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Fale comigo! Será uma honra poder te ajudar! <a class="blue no-line" href="mailto:claudio.marcelino@easybigdata.com.br">claudio.marcelino@easybigdata.com.br</a></p>
+<!-- About -->
+<div id="sobre" class="basic-1 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-container first">
+                    <div class="section-label" data-pt="sobre" data-en="about">sobre</div>
+                    <h2 data-pt="Senior Data Engineer" data-en="Senior Data Engineer">Senior Data Engineer</h2>
+                    <p data-pt="15+ anos entregando plataformas de dados de alta complexidade para os maiores bancos e empresas do Brasil — Itaú, Santander, Bradesco, Ambev e PicPay."
+                       data-en="15+ years delivering high-complexity data platforms for the largest banks and companies in Brazil — Itaú, Santander, Bradesco, Ambev and PicPay.">
+                        15+ anos entregando plataformas de dados de alta complexidade para os maiores bancos e empresas do Brasil — Itaú, Santander, Bradesco, Ambev e PicPay.
+                    </p>
+                    <p data-pt="Especialista em Medallion Architecture, Delta Lake, CI/CD para dados e migrações AWS/Azure. Fundador do AuditAI — plataforma SaaS de auditoria inteligente com IA."
+                       data-en="Specialist in Medallion Architecture, Delta Lake, CI/CD for data and AWS/Azure migrations. Founder of AuditAI — an AI-powered SaaS auditing platform.">
+                        Especialista em Medallion Architecture, Delta Lake, CI/CD para dados e migrações AWS/Azure. Fundador do AuditAI — plataforma SaaS de auditoria inteligente com IA.
+                    </p>
+                    <p data-pt="Atualmente cursando Pós-Graduação em Cloud & AI DevOps na Faculdade Impacta (2026-2027)."
+                       data-en="Currently pursuing Post-Graduate in Cloud & AI DevOps at Faculdade Impacta (2026-2027).">
+                        Atualmente cursando Pós-Graduação em <strong>Cloud & AI DevOps</strong> na Faculdade Impacta (2026-2027).
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-container second">
+                    <div class="time">Out 2025 – Abr 2026</div>
+                    <h6 data-pt="Tech Lead — Plataforma Azure Databricks (Saúde)" data-en="Tech Lead — Azure Databricks Platform (Healthcare)">Tech Lead — Plataforma Azure Databricks (Saúde)</h6>
+                    <p data-pt="Construiu esteira CI/CD enterprise do zero — 9 stacks Terraform, Unity Catalog, Private Endpoints, TFLint, Terrascan e 2 gates de aprovação humana."
+                       data-en="Built enterprise CI/CD pipeline from scratch — 9 Terraform stacks, Unity Catalog, Private Endpoints, TFLint, Terrascan and 2 human approval gates.">
+                        Construiu esteira CI/CD enterprise do zero — 9 stacks Terraform, Unity Catalog, Private Endpoints, TFLint, Terrascan e 2 gates de aprovação humana.
+                    </p>
+                    <div class="time">Jun 2024 – Out 2025</div>
+                    <h6>Big Data Engineer — GFT Technologies</h6>
+                    <p data-pt="Data Mesh para Itaú Unibanco — modernização de Mainframe, pipelines AWS Glue, Lambda, Step Functions e Terraform IaC."
+                       data-en="Data Mesh for Itaú Unibanco — Mainframe modernization, AWS Glue pipelines, Lambda, Step Functions and Terraform IaC.">
+                        Data Mesh para Itaú Unibanco — modernização de Mainframe, pipelines AWS Glue, Lambda, Step Functions e Terraform IaC.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-container third">
+                    <div class="time">Dez 2023 – Abr 2024</div>
+                    <h6>Data Engineer — PicPay Bank</h6>
+                    <p data-pt="Migração Parquet → Delta Lake — redução de +50% no tempo de job e custo. Databricks Auto-Scaling via Airflow."
+                       data-en="Parquet to Delta Lake migration — 50%+ reduction in job time and cost. Databricks Auto-Scaling via Airflow.">
+                        Migração Parquet → Delta Lake — redução de +50% no tempo de job e custo. Databricks Auto-Scaling via Airflow.
+                    </p>
+                    <div class="time">2010 – 2013</div>
+                    <h6 data-pt="Analista BI/ETL — Tetis Consultoria" data-en="BI/ETL Analyst — Tetis Consultoria">Analista BI/ETL — Tetis Consultoria</h6>
+                    <p data-pt="Início de carreira em Business Intelligence. ETL, modelagem dimensional e SQL Server para clientes do setor financeiro."
+                       data-en="Career start in Business Intelligence. ETL, dimensional modeling and SQL Server for financial sector clients.">
+                        Início de carreira em Business Intelligence. ETL, modelagem dimensional e SQL Server para clientes do setor financeiro.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <div class="footer bg-gray">
-        <div class="container">
-            <p class="p-small">Copyright 2024 © Claudio Marcelino</p>
+<!-- Services -->
+<div id="servicos" class="basic-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-label" data-pt="serviços" data-en="services">serviços</div>
+                <h2 class="h2-heading" data-pt="O que Entrego" data-en="What I Deliver">O que Entrego</h2>
+                <p class="p-heading"
+                   data-pt="Expertise completa em engenharia de dados — da ingestão bruta até analytics prontos para o negócio, com CI/CD e IA integrados."
+                   data-en="End-to-end data engineering expertise — from raw ingestion to business-ready analytics, with CI/CD and AI built in.">
+                    Expertise completa em engenharia de dados — da ingestão bruta até analytics prontos para o negócio, com CI/CD e IA integrados.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-box">
+                    <i class="far fa-gem"></i>
+                    <h4 data-pt="Arquitetura Data Lakehouse" data-en="Data Lakehouse Architecture">Arquitetura Data Lakehouse</h4>
+                    <p data-pt="Medallion Architecture (Bronze/Silver/Gold) com Delta Lake, Star Schema, Unity Catalog e Single Source of Truth."
+                       data-en="Medallion Architecture (Bronze/Silver/Gold) with Delta Lake, Star Schema, Unity Catalog governance and Single Source of Truth.">
+                        Medallion Architecture (Bronze/Silver/Gold) com Delta Lake, Star Schema, Unity Catalog e Single Source of Truth.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-box">
+                    <i class="fas fa-code"></i>
+                    <h4 data-pt="DataOps & CI/CD para Dados" data-en="DataOps & CI/CD for Data">DataOps & CI/CD para Dados</h4>
+                    <p data-pt="Pipelines CI/CD enterprise para Databricks com Terraform, GitHub Actions e Azure DevOps — dev, staging e prod com gates de qualidade automatizados."
+                       data-en="Production-grade CI/CD pipelines for Databricks using Terraform, GitHub Actions and Azure DevOps — dev, staging and prod with automated quality gates.">
+                        Pipelines CI/CD enterprise para Databricks com Terraform, GitHub Actions e Azure DevOps — dev, staging e prod com gates de qualidade automatizados.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-box">
+                    <i class="fas fa-tv"></i>
+                    <h4 data-pt="IA & Engenharia MLOps" data-en="AI & MLOps Engineering">IA & Engenharia MLOps</h4>
+                    <p data-pt="Ferramentas com IA usando MLflow, LangChain e FastAPI. Pipelines MLOps com retreinamento contínuo e versionamento de modelos."
+                       data-en="AI-powered tools with MLflow, LangChain and FastAPI. MLOps pipelines with continuous retraining and model versioning.">
+                        Ferramentas com IA usando MLflow, LangChain e FastAPI. Pipelines MLOps com retreinamento contínuo e versionamento de modelos.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scripts.js"></script>
+<!-- Skills -->
+<section id="skills" class="pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-label" data-pt="tecnologia" data-en="technology">tecnologia</div>
+                <h2 data-pt="Stack Tecnológica" data-en="Tech Stack">Stack Tecnológica</h2>
+                <p class="mb-5" data-pt="Tecnologias que uso diariamente em projetos de produção." data-en="Core technologies I use daily in production projects.">
+                    Tecnologias que uso diariamente em projetos de produção.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"><div class="skill-card">
+                <h5>⚡ Databricks & Spark</h5>
+                <p data-pt="Transformações PySpark, Delta Lake MERGE, clusters Auto-Scaling, Databricks Jobs, governança Unity Catalog. 3x certificado."
+                   data-en="PySpark transformations, Delta Lake MERGE, Auto-Scaling clusters, Databricks Jobs, Unity Catalog governance. 3x certified.">
+                    Transformações PySpark, Delta Lake MERGE, clusters Auto-Scaling, Databricks Jobs, governança Unity Catalog. 3x certificado.
+                </p>
+            </div></div>
+            <div class="col-lg-4"><div class="skill-card">
+                <h5>🔄 Apache Airflow</h5>
+                <p data-pt="Orquestração de DAGs complexas, geração dinâmica de tasks, sensors, operadores customizados e integração CI/CD."
+                   data-en="Complex DAG orchestration, dynamic task generation, sensors, custom operators and CI/CD integration.">
+                    Orquestração de DAGs complexas, geração dinâmica de tasks, sensors, operadores customizados e integração CI/CD.
+                </p>
+            </div></div>
+            <div class="col-lg-4"><div class="skill-card">
+                <h5>☁️ AWS</h5>
+                <p data-pt="S3, Athena, Glue, Redshift, Lambda, Step Functions, EMR, CloudWatch, IAM — pipelines de produção para bancos Tier-1."
+                   data-en="S3, Athena, Glue, Redshift, Lambda, Step Functions, EMR, CloudWatch, IAM — production pipelines for Tier-1 banks.">
+                    S3, Athena, Glue, Redshift, Lambda, Step Functions, EMR, CloudWatch, IAM — pipelines de produção para bancos Tier-1.
+                </p>
+            </div></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"><div class="skill-card">
+                <h5>🔷 Azure</h5>
+                <p data-pt="ADF, ADLS Gen2, Azure Databricks, DevOps, Key Vault com CMK, Private Endpoints e VNet Injection."
+                   data-en="ADF, ADLS Gen2, Azure Databricks, DevOps, Key Vault with CMK, Private Endpoints and VNet Injection.">
+                    ADF, ADLS Gen2, Azure Databricks, DevOps, Key Vault com CMK, Private Endpoints e VNet Injection.
+                </p>
+            </div></div>
+            <div class="col-lg-4"><div class="skill-card">
+                <h5>🏗️ Terraform & IaC</h5>
+                <p data-pt="9 stacks enterprise IaC para Azure Databricks — tfstate isolado, Smart Import, TFLint, Terrascan e gates de aprovação."
+                   data-en="9-stack enterprise IaC for Azure Databricks — isolated tfstate, Smart Import, TFLint, Terrascan and approval gates.">
+                    9 stacks enterprise IaC para Azure Databricks — tfstate isolado, Smart Import, TFLint, Terrascan e gates de aprovação.
+                </p>
+            </div></div>
+            <div class="col-lg-4"><div class="skill-card">
+                <h5>🤖 IA & MLOps</h5>
+                <p data-pt="MLflow, LangChain, FastAPI, SpaCy, Scikit-learn — construiu o AuditAI SaaS do zero, em produção e ao vivo."
+                   data-en="MLflow, LangChain, FastAPI, SpaCy, Scikit-learn — built AuditAI SaaS from scratch and currently live in production.">
+                    MLflow, LangChain, FastAPI, SpaCy, Scikit-learn — construiu o AuditAI SaaS do zero, em produção e ao vivo.
+                </p>
+            </div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<div id="projetos" class="ex-basic-1 pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-label" data-pt="portfólio" data-en="portfolio">portfólio</div>
+                <h2 class="h2-heading mb-2" data-pt="Projetos em Destaque" data-en="Featured Projects">Projetos em Destaque</h2>
+                <p class="mb-4" style="color:#8b949e"
+                   data-pt="Projetos enterprise combinando Engenharia de Dados, DevOps e IA."
+                   data-en="Production-grade projects combining Data Engineering, DevOps and AI.">
+                    Projetos enterprise combinando Engenharia de Dados, DevOps e IA.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+
+            <!-- P1 — IaC Scanner AI -->
+            <div class="col-lg-4 mb-4"><div class="project-card">
+                <h5>🔍 IaC Scanner with AI <span class="badge-new">NEW</span><span class="badge-ai">AI</span></h5>
+                <p data-pt="Analisador de segurança Terraform combinando engine de regras estáticas com Claude AI. Detecta vulnerabilidades, secrets hardcoded, security groups abertos e anti-padrões de arquitetura. Retorna score de segurança 0-100 com sugestões de correção."
+                   data-en="Terraform security analyzer combining static rules engine with Claude AI. Detects vulnerabilities, hardcoded secrets, open security groups and architecture anti-patterns. Returns security score 0-100 with fix suggestions.">
+                    Analisador de segurança Terraform combinando engine de regras estáticas com Claude AI. Detecta vulnerabilidades, secrets hardcoded, security groups abertos e anti-padrões de arquitetura. Retorna score de segurança 0-100 com sugestões de correção.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span><span class="project-tag">Terraform</span>
+                    <span class="project-tag">Claude AI</span><span class="project-tag">Streamlit</span>
+                    <span class="project-tag">AWS</span><span class="project-tag">Azure</span>
+                </div>
+                <a href="https://github.com/claudioMjedi1979/iac-scanner-ai" target="_blank" class="btn-solid-lg">⌥ GitHub</a>
+            </div></div>
+
+            <!-- P2 — Medallion Finance -->
+            <div class="col-lg-4 mb-4"><div class="project-card">
+                <h5>🏦 Medallion Finance Pipeline <span class="badge-new">NEW</span></h5>
+                <p data-pt="Medallion Architecture ponta a ponta (Bronze→Silver→Gold) para dados financeiros. Gerador de dados sintéticos, transformações PySpark, upserts Delta MERGE, modelagem Star Schema e dashboard Streamlit consumindo a camada Gold."
+                   data-en="End-to-end Medallion Architecture (Bronze→Silver→Gold) for financial data. Synthetic data generator, PySpark transformations, Delta MERGE upserts, Star Schema modeling and Streamlit dashboard on the Gold layer.">
+                    Medallion Architecture ponta a ponta (Bronze→Silver→Gold) para dados financeiros. Gerador de dados sintéticos, transformações PySpark, upserts Delta MERGE, modelagem Star Schema e dashboard Streamlit consumindo a camada Gold.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">PySpark</span><span class="project-tag">Delta Lake</span>
+                    <span class="project-tag">Databricks</span><span class="project-tag">Star Schema</span>
+                    <span class="project-tag">Airflow</span>
+                </div>
+                <a href="https://github.com/claudioMjedi1979/medallion-finance-pipeline" target="_blank" class="btn-solid-lg">⌥ GitHub</a>
+            </div></div>
+
+            <!-- P3 — DataOps CI/CD -->
+            <div class="col-lg-4 mb-4"><div class="project-card">
+                <h5>⚙️ DataOps CI/CD Template <span class="badge-new">NEW</span></h5>
+                <p data-pt="Template de pipeline CI/CD enterprise para Engenharia de Dados no Databricks. GitHub Actions com gates de qualidade, testes automatizados, checks de qualidade de dados e deploy multi-ambiente (dev→staging→prod) com aprovações manuais."
+                   data-en="Production-grade CI/CD pipeline template for Data Engineering on Databricks. GitHub Actions with quality gates, automated testing, data quality checks and multi-environment deploy (dev→staging→prod) with manual approvals.">
+                    Template de pipeline CI/CD enterprise para Engenharia de Dados no Databricks. GitHub Actions com gates de qualidade, testes automatizados, checks de qualidade de dados e deploy multi-ambiente (dev→staging→prod) com aprovações manuais.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">GitHub Actions</span><span class="project-tag">Terraform</span>
+                    <span class="project-tag">Databricks</span><span class="project-tag">pytest</span>
+                    <span class="project-tag">YAML</span>
+                </div>
+                <a href="https://github.com/claudioMjedi1979/dataops-cicd-template" target="_blank" class="btn-solid-lg">⌥ GitHub</a>
+            </div></div>
+
+            <!-- P4 — CCEE Streaming -->
+            <div class="col-lg-4 mb-4"><div class="project-card">
+                <h5>⚡ CCEE Streaming PoC <span class="badge-new">NEW</span></h5>
+                <p data-pt="PoC de streaming para dados de medição de energia elétrica baseado em projeto real da CCEE. Originalmente construído com AWS API Gateway + Kinesis + Flink + DynamoDB. Simulado on-premise com FastAPI + Kafka + PySpark Streaming + SQLite."
+                   data-en="Streaming PoC for retail energy measurement data based on a real CCEE project. Originally built with AWS API Gateway + Kinesis + Flink + DynamoDB. Simulated on-premise with FastAPI + Kafka + PySpark Streaming + SQLite.">
+                    PoC de streaming para dados de medição de energia elétrica baseado em projeto real da CCEE. Originalmente construído com AWS API Gateway + Kinesis + Flink + DynamoDB. Simulado on-premise com FastAPI + Kafka + PySpark Streaming + SQLite.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">Kafka</span><span class="project-tag">PySpark Streaming</span>
+                    <span class="project-tag">FastAPI</span><span class="project-tag">Kinesis</span>
+                    <span class="project-tag">Flink</span>
+                </div>
+                <a href="https://github.com/claudioMjedi1979/ccee-streaming-poc" target="_blank" class="btn-solid-lg">⌥ GitHub</a>
+            </div></div>
+
+            <!-- P5 — AuditAI -->
+            <div class="col-lg-4 mb-4"><div class="project-card">
+                <h5>🤖 AuditAI <span class="badge-ai">AI</span><span class="badge-live">LIVE</span></h5>
+                <p data-pt="Plataforma SaaS de auditoria inteligente com IA baseada nas normas ISO 31000 e ISO 37301. RandomForest + MLflow com retreinamento contínuo, detecção de dados sensíveis via NLP/SpaCy e gestão de riscos com matriz 5x5."
+                   data-en="SaaS platform for intelligent auditing with AI based on ISO 31000 and ISO 37301. RandomForest + MLflow with continuous retraining, sensitive data detection via NLP/SpaCy and 5×5 risk matrix management.">
+                    Plataforma SaaS de auditoria inteligente com IA baseada nas normas ISO 31000 e ISO 37301. RandomForest + MLflow com retreinamento contínuo, detecção de dados sensíveis via NLP/SpaCy e gestão de riscos com matriz 5x5.
+                </p>
+                <div class="project-tags">
+                    <span class="project-tag">FastAPI</span><span class="project-tag">MLflow</span>
+                    <span class="project-tag">LangChain</span><span class="project-tag">SpaCy</span>
+                    <span class="project-tag">Streamlit</span>
+                </div>
+                <a href="https://auditai.streamlit.app" target="_blank" class="btn-solid-lg">▸ <span data-pt="App Ao Vivo" data-en="Live App">App Ao Vivo</span></a>
+                <a href="https://github.com/claudioMjedi1979/auditai-api" target="_blank" class="btn-outline-lg" style="margin-left:.5rem">⌥ GitHub</a>
+            </div></div>
+
+            <!-- Certifications -->
+            <div class="col-lg-4 mb-4"><div class="project-card" style="background:rgba(255,255,255,.03)">
+                <div class="section-label" data-pt="credenciais" data-en="credentials">credenciais</div>
+                <h5 style="margin-bottom:1rem" data-pt="Certificações" data-en="Certifications">Certificações</h5>
+                <div class="cert-card"><span class="cert-icon">🏆</span><div><div class="cert-name">Platform Administrator</div><div class="cert-issuer">Databricks</div></div></div>
+                <div class="cert-card"><span class="cert-icon">🏆</span><div><div class="cert-name">LakeHouse Fundamentals</div><div class="cert-issuer">Databricks</div></div></div>
+                <div class="cert-card"><span class="cert-icon">🏆</span><div><div class="cert-name">Generative AI Fundamentals</div><div class="cert-issuer">Databricks</div></div></div>
+                <div class="cert-card"><span class="cert-icon">🔒</span><div><div class="cert-name">CyberSecurity Essentials</div><div class="cert-issuer">Certiprof</div></div></div>
+            </div></div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Contact -->
+<div id="contact" class="form-1 bg-gray">
+    <div class="container">
+        <div class="section-label" data-pt="contato" data-en="contact">contato</div>
+        <h2 data-pt="Vamos Conversar?" data-en="Get in Touch">Vamos Conversar?</h2>
+        <p data-pt="Aberto a oportunidades remotas — Senior Data Engineer, DataOps Engineer, MLOps Engineer ou Tech Lead. Disponível para contratos PJ em BRL ou USD."
+           data-en="Open to remote opportunities — Senior Data Engineer, DataOps Engineer, MLOps Engineer or Tech Lead. Available for PJ contracts in BRL or USD.">
+            Aberto a oportunidades remotas — Senior Data Engineer, DataOps Engineer, MLOps Engineer ou Tech Lead. Disponível para contratos PJ em BRL ou USD.
+        </p>
+        <p>
+            <a class="blue no-line" href="mailto:claudio.marcelino@easybigdata.com.br">
+                ✉ claudio.marcelino@easybigdata.com.br
+            </a>
+        </p>
+        <p style="margin-top:1rem">
+            <a href="https://linkedin.com/in/claudio-marcelino-a0006324" target="_blank" class="btn-outline-lg" style="margin-right:.5rem">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/claudioMjedi1979" target="_blank" class="btn-outline-lg" style="margin-right:.5rem">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://auditai.streamlit.app" target="_blank" class="btn-solid-lg">
+                🤖 AuditAI Live
+            </a>
+        </p>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer bg-gray">
+    <div class="container">
+        <p class="p-small" data-pt="Copyright 2026 © Claudio Marcelino · Senior Data Engineer · Brasil 🇧🇷 · Remoto"
+                           data-en="Copyright 2026 © Claudio Marcelino · Senior Data Engineer · Brazil 🇧🇷 · Remote">
+            Copyright 2026 © Claudio Marcelino · Senior Data Engineer · Brasil 🇧🇷 · Remoto
+        </p>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scripts.js"></script>
+
+<script>
+// ── Language Toggle ────────────────────────────────────────────────────────
+let currentLang = 'pt';
+
+function toggleLang() {
+    currentLang = currentLang === 'pt' ? 'en' : 'pt';
+    applyLang(currentLang);
+}
+
+function applyLang(lang) {
+    // Update all elements with data-pt / data-en
+    document.querySelectorAll('[data-pt]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) {
+            // Preserve child elements (icons etc)
+            if (el.children.length === 0) {
+                el.textContent = text;
+            } else {
+                // Only update text nodes, not children
+                el.childNodes.forEach(node => {
+                    if (node.nodeType === 3 && node.textContent.trim()) {
+                        node.textContent = text;
+                    }
+                });
+            }
+        }
+    });
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+
+    // Update button
+    const flag  = document.getElementById('langFlag');
+    const label = document.getElementById('langLabel');
+    if (lang === 'en') {
+        flag.textContent  = '🇧🇷';
+        label.textContent = 'PT';
+    } else {
+        flag.textContent  = '🇺🇸';
+        label.textContent = 'EN';
+    }
+
+    // Save preference
+    localStorage.setItem('lang', lang);
+}
+
+// Load saved preference
+window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('lang');
+    if (saved && saved !== 'pt') {
+        currentLang = saved;
+        applyLang(saved);
+    }
+});
+</script>
+
 </body>
-
 </html>
